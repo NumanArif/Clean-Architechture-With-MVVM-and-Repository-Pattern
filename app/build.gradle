@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk compile_sdk_version
+
+    defaultConfig {
+        minSdk min_sdk_version
+        targetSdk target_sdk_version
+        versionCode version_code
+        versionName version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility jvm_compatibility_version
+        targetCompatibility jvm_compatibility_version
+    }
+    kotlinOptions {
+        jvmTarget = jvm_target_version
+    }
+}
+
+dependencies {
+    implementation project(":presentation")
+    implementation appDependencies.values()
+    kapt appAnnotationDependencies.values()
+
+    implementation(project(":ui"))
+    implementation(project(":presentation"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+}

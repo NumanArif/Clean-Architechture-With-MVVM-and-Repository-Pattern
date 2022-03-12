@@ -1,0 +1,69 @@
+ext {
+    testDependencies = [
+            junit         : "junit:junit:$junit_version",
+            mockito       : ["org.mockito:mockito-core:$mockito_version", "org.mockito:mockito-inline:$mockito_version"],
+            mocitoKotlin  : "org.mockito.kotlin:mockito-kotlin:$mockito_version",
+            androidxArc   : "androidx.arch.core:core-testing:$androidx_arc_testing_version",
+            coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+    ]
+    androidTestDependencies = [
+            androidxJunit: "androidx.test.ext:junit:$androidx_test_junit_version",
+            androidxArc  : "androidx.arch.core:core-testing:$androidx_arc_testing_version",
+            espressoCore : "androidx.test.espresso:espresso-core:$espresso_core_version"
+    ]
+
+    dataDependencies = [
+            gson             : "com.google.code.gson:gson:$gson_version",
+            retrofit         : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            kotlinxCoroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    ]
+
+    domainDependencies = [
+            kotlinxCoroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    ]
+
+    presentationDependencies = [
+            hilt        : "com.google.dagger:hilt-android:$hilt_version",
+            viewmodelktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    ]
+
+    presentationAnnotationDependencies = [
+            hilt: "com.google.dagger:hilt-android-compiler:$hilt_version"
+    ]
+
+    uiDependencies = [
+            kotlinxCoroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version",
+            lifecycleRuntime  : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            navigation        : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            androidCore       : "androidx.core:core-ktx:$androidx_core",
+            androidLegacy     : "androidx.legacy:legacy-support-v4:$androidx_legacy",
+            appCompat         : "androidx.appcompat:appcompat:$androidx_appcompat",
+            hilt              : "com.google.dagger:hilt-android:$hilt_version",
+            androidxActivity  : "androidx.activity:activity-ktx:$androidx_activity_version",
+            androidxFragment  : "androidx.fragment:fragment-ktx:$androidx_fragment_version",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    ]
+
+    uiAnnotationDependencies = [
+            hilt: "com.google.dagger:hilt-android-compiler:$hilt_version"
+    ]
+
+    appDependencies = [
+            retrofit         : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            gson              : "com.google.code.gson:gson:$gson_version",
+            hilt              : "com.google.dagger:hilt-android:$hilt_version",
+            navigation        : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            androidCore       : "androidx.core:core-ktx:$androidx_core",
+            androidLegacy     : "androidx.legacy:legacy-support-v4:$androidx_legacy",
+            appCompat         : "androidx.appcompat:appcompat:$androidx_appcompat",
+            androidxActivity  : "androidx.activity:activity-ktx:$androidx_activity_version",
+            androidxFragment  : "androidx.fragment:fragment-ktx:$androidx_fragment_version"
+    ]
+
+    appAnnotationDependencies = [
+            hilt: "com.google.dagger:hilt-android-compiler:$hilt_version"
+    ]
+
+}
