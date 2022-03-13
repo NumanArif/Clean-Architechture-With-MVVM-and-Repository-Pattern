@@ -5,6 +5,6 @@ data class GithubRepositoryDomainModel(
     val description: String,
     val url: String,
     val language: String,
-    val score: Float,
+    val score: Long,
     val author: GithubRepositoryAuthorDomainModel
 )

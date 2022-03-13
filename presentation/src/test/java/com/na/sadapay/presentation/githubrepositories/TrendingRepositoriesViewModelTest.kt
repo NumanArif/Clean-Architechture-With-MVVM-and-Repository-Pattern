@@ -35,7 +35,7 @@ class TrendingRepositoriesViewModelTest {
             description = "test description",
             url = "https://testRepo1/html_url",
             language = "test language 1",
-            score = 3f,
+            score = 3,
             author = GithubRepositoryAuthorDomainModel(
                 name = "test author 1",
                 avatarUrl = "https://testAuthor/avatar1"
@@ -46,7 +46,7 @@ class TrendingRepositoriesViewModelTest {
             description = "test description",
             url = "https://testRepo1/html_url",
             language = "test language 2",
-            score = 4.2f,
+            score = 42,
             author = GithubRepositoryAuthorDomainModel(
                 name = "test author 2",
                 avatarUrl = "https://testAuthor/avatar2"
@@ -60,7 +60,7 @@ class TrendingRepositoriesViewModelTest {
             description = "test description",
             url = "https://testRepo1/html_url",
             language = "test language 1",
-            score = 3f,
+            score = 3,
             author = GithubRepositoryAuthorPresentationModel(
                 name = "test author 1",
                 avatarUrl = "https://testAuthor/avatar1"
@@ -71,7 +71,7 @@ class TrendingRepositoriesViewModelTest {
             description = "test description",
             url = "https://testRepo1/html_url",
             language = "test language 2",
-            score = 4.2f,
+            score = 42,
             author = GithubRepositoryAuthorPresentationModel(
                 name = "test author 2",
                 avatarUrl = "https://testAuthor/avatar2"
