@@ -42,7 +42,8 @@ ext {
             hilt              : "com.google.dagger:hilt-android:$hilt_version",
             androidxActivity  : "androidx.activity:activity-ktx:$androidx_activity_version",
             androidxFragment  : "androidx.fragment:fragment-ktx:$androidx_fragment_version",
-            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+            glideImageLoading : "com.github.bumptech.glide:glide:$glide_version"
     ]
 
     uiAnnotationDependencies = [

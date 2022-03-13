@@ -1,7 +1,7 @@
 package com.na.sadapay.ui.githubrepositories.model
 
 data class GithubRepositoryUiModel(
-    val isExpanded: Boolean,
+    var isExpanded: Boolean,
     val fullName: String,
     val description: String,
     val language: String,

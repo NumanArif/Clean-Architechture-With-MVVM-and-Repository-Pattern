@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/restaurantListing">
+    app:startDestination="@id/trendingRepositories">
 
     <fragment
-        android:id="@+id/restaurantListing"
-        android:name="com.na.takeaway.ui.restaurants.RestaurantListingFragment"
-        android:label="@string/restaurants_listing_title"
-        tools:layout="@layout/fragment_restaurant_listing" />
+        android:id="@+id/trendingRepositories"
+        android:name="com.na.sadapay.ui.githubrepositories.TrendingRepositoriesFragment"
+        android:label="@string/trending_repositories_screen_title"
+        tools:layout="@layout/fragment_trending_repositories" />
 </navigation>
