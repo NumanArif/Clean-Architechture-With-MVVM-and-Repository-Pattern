@@ -2,6 +2,7 @@ package com.na.sadapay.ui.githubrepositories
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
@@ -25,6 +26,8 @@ class TrendingRepositoriesFragment : BaseFragment() {
     override val layoutResource: Int = R.layout.fragment_trending_repositories
 
     private val trendingRepositoriesListingView: RecyclerView get() = requireView().findViewById(R.id.trendingRepositoriesListing)
+    private val retryView: View get() = requireView().findViewById(R.id.retryView)
+    private val retryActionView: View get() = requireView().findViewById(R.id.retryAction)
 
     @Inject
     lateinit var githubRepositoryUiModelMapper: GithubRepositoryPresentationToUiModelMapper
@@ -35,6 +38,10 @@ class TrendingRepositoriesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         trendingRepositoriesListingView.adapter = repositoryAdapter
+        retryActionView.setOnClickListener {
+            retryView.isVisible = false
+            viewModel.onRetryAction()
+        }
         observeData()
         viewModel.onFetchTrendingGithubRepositories()
     }
@@ -51,5 +58,10 @@ class TrendingRepositoriesFragment : BaseFragment() {
 
     private fun showTrendingRepositories(trendingRepositories: List<GithubRepositoryUiModel>) {
         repositoryAdapter.submitList(trendingRepositories)
+    }
+
+    override fun onUseCaseError(exception: Exception) {
+        super.onUseCaseError(exception)
+        retryView.isVisible = true
     }
 }

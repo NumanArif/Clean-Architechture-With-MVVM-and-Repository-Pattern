@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">Trending Repos</string>
     <string name="trending_repositories_screen_title">Trending</string>
+    <string name="retry_action_label">Retry</string>
+    <string name="api_error_message_title">Something went wrong</string>
+    <string name="api_error_message_description">An alian probably blocking your connection</string>
 </resources>

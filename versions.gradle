@@ -49,4 +49,5 @@ ext {
     constraint_layout_version = "2.1.1"
     glide_version = "4.13.0"
     okhttp_version = "4.9.3"
+    lottie_version = "3.4.0"
 }
