@@ -1,5 +1,7 @@
 package com.na.sadapay.presentation.githubrepositories
 
+import androidx.lifecycle.viewModelScope
+import com.na.sadapay.domain.githubrepositories.model.GithubRepositoryDomainModel
 import com.na.sadapay.domain.githubrepositories.usecase.GetTrendingGithubRepositoriesUseCase
 import com.na.sadapay.presentation.core.BaseViewModel
 import com.na.sadapay.presentation.githubrepositories.mapper.GithubRepositoryDomainToPresentationModelMapper
@@ -20,18 +22,25 @@ class TrendingRepositoriesViewModel @Inject constructor(
     val trendingRepositories: StateFlow<List<GithubRepositoryPresentationModel>>
         get() = _trendingRepositories
 
-    fun onFetchTrendingGithubRepositories() {
-        TODO("Not yet implemented")
-    }
-
-    private fun updateTrendingRepositories(trendingRepos: List<GithubRepositoryPresentationModel>) {
+    private fun updateTrendingRepositories(trendingRepos: List<GithubRepositoryDomainModel>) {
+        _trendingRepositories.value =
+            trendingRepos.map(githubRepositoryPresentationModelMapper::mapToPresentation)
     }
 
     private fun handleError(exception: Exception) {
-        TODO("Not yet implemented")
+        _useCaseExecutionError.value = exception
+    }
+
+    fun onFetchTrendingGithubRepositories() {
+        githubRepositoriesUseCase.execute(
+            coroutineScope = viewModelScope,
+            request = Unit,
+            onResponse = ::updateTrendingRepositories,
+            onError = ::handleError
+        )
     }
 
     fun onRetryAction() {
-        TODO("Not yet implemented")
+        onFetchTrendingGithubRepositories()
     }
 }

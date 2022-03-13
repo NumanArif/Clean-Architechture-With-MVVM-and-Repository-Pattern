@@ -1,5 +1,6 @@
 package com.na.sadapay.presentation.githubrepositories
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.na.sadapay.domain.githubrepositories.model.GithubRepositoryAuthorDomainModel
 import com.na.sadapay.domain.githubrepositories.model.GithubRepositoryDomainModel
 import com.na.sadapay.domain.githubrepositories.usecase.GetTrendingGithubRepositoriesUseCase
@@ -10,6 +11,7 @@ import com.na.sadapay.presentation.usecasetestutil.givenNoArgumentSuccessfulUseC
 import com.na.sadapay.presentation.usecasetestutil.givenNoArgumentUnSuccessfulUseCaseExecution
 import org.junit.Assert.assertEquals
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
@@ -76,6 +78,9 @@ class TrendingRepositoriesViewModelTest {
             )
         )
     )
+
+    @get:Rule
+    val instantExecutorRule = InstantTaskExecutorRule()
 
     @Before
     fun setup() {
