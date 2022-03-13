@@ -1,4 +1,4 @@
-package com.na.sadapay.data.githubrepositories
+package com.na.sadapay.data.githubrepositories.mapper
 
 import com.na.sadapay.data.githubrepositories.mapper.GithubRepositoryAuthorDataToDomainModelMapper
 import com.na.sadapay.data.githubrepositories.model.GithubRepositoryAuthorDataModel
