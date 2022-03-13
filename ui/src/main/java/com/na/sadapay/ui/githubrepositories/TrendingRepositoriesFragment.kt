@@ -28,6 +28,7 @@ class TrendingRepositoriesFragment : BaseFragment() {
     private val trendingRepositoriesListingView: RecyclerView get() = requireView().findViewById(R.id.trendingRepositoriesListing)
     private val retryView: View get() = requireView().findViewById(R.id.retryView)
     private val retryActionView: View get() = requireView().findViewById(R.id.retryAction)
+    private val shimmerLoadingView: View get() = requireView().findViewById(R.id.shimmerLoading)
 
     @Inject
     lateinit var githubRepositoryUiModelMapper: GithubRepositoryPresentationToUiModelMapper
@@ -63,5 +64,11 @@ class TrendingRepositoriesFragment : BaseFragment() {
     override fun onUseCaseError(exception: Exception) {
         super.onUseCaseError(exception)
         retryView.isVisible = true
+    }
+
+    override fun onDataLoading(isDataLoading: Boolean) {
+        super.onDataLoading(isDataLoading)
+        trendingRepositoriesListingView.isVisible = !isDataLoading
+        shimmerLoadingView.isVisible = isDataLoading
     }
 }

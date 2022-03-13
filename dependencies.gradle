@@ -44,7 +44,8 @@ ext {
             androidxFragment  : "androidx.fragment:fragment-ktx:$androidx_fragment_version",
             constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
             glideImageLoading : "com.github.bumptech.glide:glide:$glide_version",
-            lottie            : "com.airbnb.android:lottie:$lottie_version"
+            lottie            : "com.airbnb.android:lottie:$lottie_version",
+            facebookShimmer   : "com.facebook.shimmer:shimmer:$shimmer_version"
     ]
 
     uiAnnotationDependencies = [

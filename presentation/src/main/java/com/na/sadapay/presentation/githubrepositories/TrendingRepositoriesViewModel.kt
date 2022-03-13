@@ -23,15 +23,18 @@ class TrendingRepositoriesViewModel @Inject constructor(
         get() = _trendingRepositories
 
     private fun updateTrendingRepositories(trendingRepos: List<GithubRepositoryDomainModel>) {
+        _isDataLoading.value = false
         _trendingRepositories.value =
             trendingRepos.map(githubRepositoryPresentationModelMapper::mapToPresentation)
     }
 
     private fun handleError(exception: Exception) {
+        _isDataLoading.value = false
         _useCaseExecutionError.value = exception
     }
 
     fun onFetchTrendingGithubRepositories() {
+        _isDataLoading.value = true
         githubRepositoriesUseCase.execute(
             coroutineScope = viewModelScope,
             request = Unit,

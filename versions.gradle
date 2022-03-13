@@ -50,4 +50,5 @@ ext {
     glide_version = "4.13.0"
     okhttp_version = "4.9.3"
     lottie_version = "3.4.0"
+    shimmer_version = "0.5.0"
 }

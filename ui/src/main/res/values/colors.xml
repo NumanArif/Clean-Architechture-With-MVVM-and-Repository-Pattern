@@ -5,4 +5,5 @@
     <color name="primary_text_color">#FF000000</color>
     <color name="secondary_text_color">#322F2F</color>
     <color name="screen_background_color">#FFFFFFFF</color>
+    <color name="shimmer_background">#373737</color>
 </resources>
