@@ -51,16 +51,19 @@ ext {
     ]
 
     appDependencies = [
-            retrofit         : "com.squareup.retrofit2:retrofit:$retrofit_version",
-            gson              : "com.google.code.gson:gson:$gson_version",
-            hilt              : "com.google.dagger:hilt-android:$hilt_version",
-            navigation        : "androidx.navigation:navigation-ui-ktx:$navigation_version",
-            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
-            androidCore       : "androidx.core:core-ktx:$androidx_core",
-            androidLegacy     : "androidx.legacy:legacy-support-v4:$androidx_legacy",
-            appCompat         : "androidx.appcompat:appcompat:$androidx_appcompat",
-            androidxActivity  : "androidx.activity:activity-ktx:$androidx_activity_version",
-            androidxFragment  : "androidx.fragment:fragment-ktx:$androidx_fragment_version"
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            retrofitConverter     : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            okhttpClient          : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            httpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+            gson                  : "com.google.code.gson:gson:$gson_version",
+            hilt                  : "com.google.dagger:hilt-android:$hilt_version",
+            navigation            : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigationFragment    : "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            androidCore           : "androidx.core:core-ktx:$androidx_core",
+            androidLegacy         : "androidx.legacy:legacy-support-v4:$androidx_legacy",
+            appCompat             : "androidx.appcompat:appcompat:$androidx_appcompat",
+            androidxActivity      : "androidx.activity:activity-ktx:$androidx_activity_version",
+            androidxFragment      : "androidx.fragment:fragment-ktx:$androidx_fragment_version"
     ]
 
     appAnnotationDependencies = [
