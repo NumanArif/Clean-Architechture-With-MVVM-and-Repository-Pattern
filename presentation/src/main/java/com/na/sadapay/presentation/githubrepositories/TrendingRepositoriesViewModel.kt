@@ -12,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class TrendingRepositoriesViewModel @Inject constructor(
     private val githubRepositoriesUseCase: GetTrendingGithubRepositoriesUseCase,
-    private val gGithubRepositoryPresentationModelMapper: GithubRepositoryDomainToPresentationModelMapper
+    private val githubRepositoryPresentationModelMapper: GithubRepositoryDomainToPresentationModelMapper
 ) : BaseViewModel() {
     private val _trendingRepositories by lazy {
         MutableStateFlow<List<GithubRepositoryPresentationModel>>(emptyList())
@@ -21,17 +21,17 @@ class TrendingRepositoriesViewModel @Inject constructor(
         get() = _trendingRepositories
 
     fun onFetchTrendingGithubRepositories() {
-        // TODO("Not yet implemented")
+        TODO("Not yet implemented")
     }
 
     private fun updateTrendingRepositories(trendingRepos: List<GithubRepositoryPresentationModel>) {
     }
 
     private fun handleError(exception: Exception) {
-        // TODO("Not yet implemented")
+        TODO("Not yet implemented")
     }
 
     fun onRetryAction() {
-        // TODO("Not yet implemented")
+        TODO("Not yet implemented")
     }
 }
