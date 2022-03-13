@@ -7,7 +7,13 @@ import com.na.takeaway.data.core.mapper.DataToDomainModelMapper
 class GithubRepositoryDataToDomainModelMapper(
     private val githubRepositoryAuthorDomainModelMapper: GithubRepositoryAuthorDataToDomainModelMapper
 ): DataToDomainModelMapper<GithubRepositoryDataModel, GithubRepositoryDomainModel>() {
-    override fun mapToDomain(input: GithubRepositoryDataModel): GithubRepositoryDomainModel {
-        TODO("Not yet implemented")
-    }
+    override fun mapToDomain(input: GithubRepositoryDataModel) =
+        GithubRepositoryDomainModel(
+            fullName = input.fullName,
+            description = input.description,
+            url = input.url,
+            language = input.language,
+            score = input.score,
+            author = githubRepositoryAuthorDomainModelMapper.mapToDomain(input.author)
+        )
 }

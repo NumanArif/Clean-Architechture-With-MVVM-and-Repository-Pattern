@@ -6,7 +6,9 @@ import com.na.takeaway.data.core.mapper.DataToDomainModelMapper
 
 class GithubRepositoryAuthorDataToDomainModelMapper :
     DataToDomainModelMapper<GithubRepositoryAuthorDataModel, GithubRepositoryAuthorDomainModel>() {
-    override fun mapToDomain(input: GithubRepositoryAuthorDataModel): GithubRepositoryAuthorDomainModel {
-        TODO("Not yet implemented")
-    }
+    override fun mapToDomain(input: GithubRepositoryAuthorDataModel) =
+        GithubRepositoryAuthorDomainModel(
+            name = input.name,
+            avatarUrl = input.avatarUrl
+        )
 }
