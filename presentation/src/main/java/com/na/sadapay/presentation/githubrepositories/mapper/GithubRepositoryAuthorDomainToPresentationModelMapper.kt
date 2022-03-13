@@ -6,7 +6,9 @@ import com.na.takeaway.presentation.core.DomainToPresentationModelMapper
 
 class GithubRepositoryAuthorDomainToPresentationModelMapper :
     DomainToPresentationModelMapper<GithubRepositoryAuthorDomainModel, GithubRepositoryAuthorPresentationModel>() {
-    override fun mapToPresentation(input: GithubRepositoryAuthorDomainModel): GithubRepositoryAuthorPresentationModel {
-        TODO("Not yet implemented")
-    }
+    override fun mapToPresentation(input: GithubRepositoryAuthorDomainModel) =
+        GithubRepositoryAuthorPresentationModel(
+            name = input.name,
+            avatarUrl = input.avatarUrl
+        )
 }

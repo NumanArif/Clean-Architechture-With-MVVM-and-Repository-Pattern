@@ -6,8 +6,14 @@ import com.na.takeaway.presentation.core.DomainToPresentationModelMapper
 
 class GithubRepositoryDomainToPresentationModelMapper(
     private val githubRepositoryAuthorPresentationModelMapper: GithubRepositoryAuthorDomainToPresentationModelMapper
-): DomainToPresentationModelMapper<GithubRepositoryDomainModel, GithubRepositoryPresentationModel>() {
-    override fun mapToPresentation(input: GithubRepositoryDomainModel): GithubRepositoryPresentationModel {
-        TODO("Not yet implemented")
-    }
+) : DomainToPresentationModelMapper<GithubRepositoryDomainModel, GithubRepositoryPresentationModel>() {
+    override fun mapToPresentation(input: GithubRepositoryDomainModel) =
+        GithubRepositoryPresentationModel(
+            fullName = input.fullName,
+            description = input.description,
+            url = input.url,
+            language = input.language,
+            score = input.score,
+            author = githubRepositoryAuthorPresentationModelMapper.mapToPresentation(input.author)
+        )
 }
