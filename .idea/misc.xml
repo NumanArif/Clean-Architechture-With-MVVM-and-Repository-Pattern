@@ -8,8 +8,9 @@
         <entry key="ui/src/main/res/drawable/ic_score.xml" value="0.2325" />
         <entry key="ui/src/main/res/layout/activity_main.xml" value="0.24003623188405798" />
         <entry key="ui/src/main/res/layout/fragment_restaurant_listing.xml" value="0.375" />
-        <entry key="ui/src/main/res/layout/fragment_trending_repositories.xml" value="0.24003623188405798" />
+        <entry key="ui/src/main/res/layout/fragment_trending_repositories.xml" value="0.25" />
         <entry key="ui/src/main/res/layout/list_item_trending_repository_view.xml" value="0.24003623188405798" />
+        <entry key="ui/src/main/res/layout/shimmer_layout.xml" value="0.2259963768115942" />
         <entry key="ui/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2325" />
       </map>
     </option>

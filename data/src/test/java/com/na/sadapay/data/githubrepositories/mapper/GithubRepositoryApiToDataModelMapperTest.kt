@@ -1,15 +1,10 @@
 package com.na.sadapay.data.githubrepositories.mapper
 
-import com.na.sadapay.data.githubrepositories.mapper.GithubRepositoryApiToDataModelMapper
-import com.na.sadapay.data.githubrepositories.mapper.GithubRepositoryAuthorDataToDomainModelMapper
-import com.na.sadapay.data.githubrepositories.mapper.GithubRepositoryDataToDomainModelMapper
-import com.na.sadapay.data.githubrepositories.mapper.GithubRepositoryOwnerApiToAuthorDataModelMapper
+import com.na.sadapay.data.githubrepositories.model.GithubRepositoriesApiModel
 import com.na.sadapay.data.githubrepositories.model.GithubRepositoryApiModel
 import com.na.sadapay.data.githubrepositories.model.GithubRepositoryAuthorDataModel
 import com.na.sadapay.data.githubrepositories.model.GithubRepositoryDataModel
 import com.na.sadapay.data.githubrepositories.model.GithubRepositoryOwnerApiModel
-import com.na.sadapay.domain.githubrepositories.model.GithubRepositoryAuthorDomainModel
-import com.na.sadapay.domain.githubrepositories.model.GithubRepositoryDomainModel
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -26,8 +21,8 @@ import org.mockito.kotlin.given
 class GithubRepositoryApiToDataModelMapperTest(
     private val OwnerApiModel: GithubRepositoryOwnerApiModel,
     private val authorDataModel: GithubRepositoryAuthorDataModel,
-    private val input: GithubRepositoryApiModel,
-    private val expectedResult: GithubRepositoryDataModel
+    private val input: GithubRepositoriesApiModel,
+    private val expectedResult: List<GithubRepositoryDataModel>
 ) {
     private lateinit var classUnderTest: GithubRepositoryApiToDataModelMapper
 
@@ -44,26 +39,32 @@ class GithubRepositoryApiToDataModelMapperTest(
                     name = "test author 1",
                     avatarUrl = "https://testAuthor/avatar1"
                 ),
-                GithubRepositoryApiModel(
-                    full_name = "test repo 1",
-                    description = "test description",
-                    html_url = "https://testRepo1/html_url",
-                    language = "test language 1",
-                    stargazers_count = 3,
-                    owner = GithubRepositoryOwnerApiModel(
-                        login = "test author 1",
-                        avatar_url = "https://testAuthor/avatar1"
+                GithubRepositoriesApiModel(
+                    items = listOf(
+                        GithubRepositoryApiModel(
+                            full_name = "test repo 1",
+                            description = "test description",
+                            html_url = "https://testRepo1/html_url",
+                            language = "test language 1",
+                            stargazers_count = 3,
+                            owner = GithubRepositoryOwnerApiModel(
+                                login = "test author 1",
+                                avatar_url = "https://testAuthor/avatar1"
+                            )
+                        )
                     )
                 ),
-                GithubRepositoryDataModel(
-                    fullName = "test repo 1",
-                    description = "test description",
-                    url = "https://testRepo1/html_url",
-                    language = "test language 1",
-                    score = 3,
-                    author = GithubRepositoryAuthorDataModel(
-                        name = "test author 1",
-                        avatarUrl = "https://testAuthor/avatar1"
+                listOf(
+                    GithubRepositoryDataModel(
+                        fullName = "test repo 1",
+                        description = "test description",
+                        url = "https://testRepo1/html_url",
+                        language = "test language 1",
+                        score = 3,
+                        author = GithubRepositoryAuthorDataModel(
+                            name = "test author 1",
+                            avatarUrl = "https://testAuthor/avatar1"
+                        )
                     )
                 )
             ),
@@ -76,26 +77,32 @@ class GithubRepositoryApiToDataModelMapperTest(
                     name = "test author 2",
                     avatarUrl = "https://testAuthor/avatar2"
                 ),
-                GithubRepositoryApiModel(
-                    full_name = "test repo 2",
-                    description = "test description",
-                    html_url = "https://testRepo1/html_url",
-                    language = "test language 2",
-                    stargazers_count = 42,
-                    owner = GithubRepositoryOwnerApiModel(
-                        login = "test author 2",
-                        avatar_url = "https://testAuthor/avatar2"
+                GithubRepositoriesApiModel(
+                    items = listOf(
+                        GithubRepositoryApiModel(
+                            full_name = "test repo 2",
+                            description = "test description",
+                            html_url = "https://testRepo1/html_url",
+                            language = "test language 2",
+                            stargazers_count = 42,
+                            owner = GithubRepositoryOwnerApiModel(
+                                login = "test author 2",
+                                avatar_url = "https://testAuthor/avatar2"
+                            )
+                        )
                     )
                 ),
-                GithubRepositoryDataModel(
-                    fullName = "test repo 2",
-                    description = "test description",
-                    url = "https://testRepo1/html_url",
-                    language = "test language 2",
-                    score = 42,
-                    author = GithubRepositoryAuthorDataModel(
-                        name = "test author 2",
-                        avatarUrl = "https://testAuthor/avatar2"
+                listOf(
+                    GithubRepositoryDataModel(
+                        fullName = "test repo 2",
+                        description = "test description",
+                        url = "https://testRepo1/html_url",
+                        language = "test language 2",
+                        score = 42,
+                        author = GithubRepositoryAuthorDataModel(
+                            name = "test author 2",
+                            avatarUrl = "https://testAuthor/avatar2"
+                        )
                     )
                 )
             )
